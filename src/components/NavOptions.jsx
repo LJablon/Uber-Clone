@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import {
   StyleSheet,
   Text,
@@ -26,7 +27,8 @@ const data = [
 ];
 
 const NavOptions = () => {
-  return (
+    const navigation = useNavigation();
+    return (
     <FlatList
       data={data}
       horizontal
@@ -35,7 +37,8 @@ const NavOptions = () => {
         <TouchableOpacity
           style={tw`p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40 rounded-lg`
 
-          }>
+          }
+          onPress={() => navigation.navigate(item.screen)}>
           <View>
             <Image
               source={{ uri: item.image }}
