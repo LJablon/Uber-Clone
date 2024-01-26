@@ -11,6 +11,12 @@ const data = [
     destination: "996 Coast View Drive",
   },
   {
+    id: "3",
+    icon: "school", 
+    location: "School", 
+    destination: "500 El Camino Real",
+  },
+  {
     id: "2",
     icon: "briefcase",
     location: "Work",

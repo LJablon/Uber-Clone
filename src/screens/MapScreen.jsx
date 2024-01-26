@@ -15,9 +15,7 @@ import RideOptionsCard from "../components/RideOptionsCard";
 const MapScreen = () => {
   const Stack = createNativeStackNavigator();
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-    >
+    <View>
       <View style={tw`h-1/2`}>
         <Map />
       </View>
@@ -39,7 +37,7 @@ const MapScreen = () => {
           />
         </Stack.Navigator>
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 
