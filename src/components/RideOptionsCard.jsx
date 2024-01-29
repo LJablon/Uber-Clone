@@ -35,7 +35,7 @@ const data = [
   },
 ];
 
-const SURGE_CHARGE_RATE = 1.5; 
+const SURGE_CHARGE_RATE = 1.5;
 
 const RideOptionsCard = () => {
   const navigation = useNavigation();
@@ -47,15 +47,17 @@ const RideOptionsCard = () => {
       <View style={tw`p-3`}>
         {/* TODO: watch button for later */}
         <TouchableOpacity
-          style={tw`absolute top-3 left-5`}
+          style={tw`absolute top-3 left-5 z-50`}
           onPress={() => {
             console.log("Pressed");
             navigation.navigate("NavigationCard");
           }}
         >
-          <Icon name="chevron-left" type="fontawesome" />
+          <Icon name="chevron-left" type="fontawesome" size={30} />
         </TouchableOpacity>
-        <Text style={tw`text-center text-xl mb-1`}>Select a Ride - {travelTimeInformation?.distance.text}</Text>
+        <Text style={tw`text-center text-xl mb-1`}>
+          Select a Ride - {travelTimeInformation?.distance.text}
+        </Text>
       </View>
       <FlatList
         style={tw`-mt-5`}
@@ -87,7 +89,10 @@ const RideOptionsCard = () => {
                 style: "currency",
                 currency: "USD",
               }).format(
-                (travelTimeInformation?.duration.value * multiplier * SURGE_CHARGE_RATE) /100
+                (travelTimeInformation?.duration.value *
+                  multiplier *
+                  SURGE_CHARGE_RATE) /
+                  100
               )}
             </Text>
           </TouchableOpacity>
