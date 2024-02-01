@@ -4,6 +4,8 @@ const initialState = {
   origin: null,
   destination: null,
   travelTimeInformation: null,
+  originAddress: null,
+  destinationAddress: null,
 };
 
 export const navSlice = createSlice({
@@ -19,18 +21,34 @@ export const navSlice = createSlice({
     setTravelTimeInformation: (state, action) => {
       state.travelTimeInformation = action.payload;
     },
+    setOriginAddress: (state, action) => {
+      state.originAddress = action.payload;
+    },
+    setDestinationAddress: (state, action) => {
+      state.destinationAddress = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setOrigin, setDestination, setTravelTimeInformation } =
-  navSlice.actions;
+export const {
+  setOrigin,
+  setDestination,
+  setTravelTimeInformation,
+  setOriginAddress,
+  setDestinationAddress,
+} = navSlice.actions;
 
 //Selectors
 export const selectOrigin = (state) => state.nav.origin;
 
-export const selectDestination = (state) => state.nav.destination;  
+export const selectDestination = (state) => state.nav.destination;
 
-export const selectTravelTimeInformation = (state) => state.nav.travelTimeInformation;
+export const selectTravelTimeInformation = (state) =>
+  state.nav.travelTimeInformation;
 
-export default navSlice.reducer; 
+export const selectOriginAddress = (state) => state.nav.originAddress;
+
+export const selectDestinationAddress = (state) => state.nav.destinationAddress;
+
+export default navSlice.reducer;
