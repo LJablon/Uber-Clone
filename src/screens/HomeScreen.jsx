@@ -90,16 +90,8 @@ const HomeScreen = () => {
             );
             dispatch(setDestination(null));
           }}
-
-          // TODO: Current location 
-          // predefinedPlaces={[
-          //   {
-          //     description: "Current Location",
-          //     geometry: { location: { lat: lat, lng: lng } },
-          //   },
-          // ]}
           query={{
-            key: "AIzaSyCqnezG3TKUjGgmP6lVGr6cTpS1OhPMmm0",
+            key: GOOGLE_MAPS_APIKEY,
             language: "en",
           }}
         />

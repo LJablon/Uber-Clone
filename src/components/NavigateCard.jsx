@@ -18,6 +18,7 @@ import { useNavigation } from "@react-navigation/native";
 import NavFavorites from "./NavFavorites";
 import { Icon } from "react-native-elements";
 import { useSelector } from "react-redux";
+import { GOOGLE_MAPS_KEY} from "@env";
 
 const NavigateCard = () => {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const NavigateCard = () => {
             fetchDetails={true}
             enablePoweredByContainer={false}
             query={{
-              key: "AIzaSyCqnezG3TKUjGgmP6lVGr6cTpS1OhPMmm0",
+              key: GOOGLE_MAPS_KEY,
               language: "en",
             }}
             onPress={(data, details = null) => {
